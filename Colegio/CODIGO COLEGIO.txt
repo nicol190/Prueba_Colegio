@@ -1,0 +1,35 @@
+COLEGIO
+//CREATE (CRUD)
+    public void registrar_area() throws IOException {
+
+        nom_area = JOptionPane.showInputDialog("Ingrese el nombre del area");
+
+        ID = consultarID() + 1;
+        BufferedWriter bw = new BufferedWriter(new FileWriter(url, true));
+
+        bw.write(ID + "," + nom_area);
+        bw.flush();
+        bw.newLine();
+        bw.close();
+        JOptionPane.showMessageDialog(null, "El area se ha registrado correctamente");
+    }
+
+//READ(CRUD) (OFICINA)
+ public void consultar() throws IOException {
+        BufferedReader br = new BufferedReader(new FileReader(url));
+
+        String record;
+
+        while ((record = br.readLine()) != null) {
+
+            //StringTokenizer(record, ",") ---> st.nextToken() --> solo imprime el primer valor antes de la coma
+            StringTokenizer st = new StringTokenizer(record, ",");
+
+            listaOficinas.add(st.nextToken());
+        }
+
+        br.close();
+
+        JOptionPane.showMessageDialog(null, listaOficinas);
+
+    }

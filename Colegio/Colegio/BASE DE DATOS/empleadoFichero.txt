@@ -1,0 +1,2 @@
+1,100722705,jessica,osorio,32253539,indefinido,Rectora
+200,1005253371,nicol,b,12345,indefinido,rector
